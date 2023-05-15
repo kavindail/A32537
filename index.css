@@ -1,0 +1,60 @@
+body{
+  background-image: url(https://e0.pxfuel.com/wallpapers/250/389/desktop-wallpaper-misty-pokemon-full-pokemon-scenery.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+#displayInfo{
+  color:white;
+  font-size: 2em;
+  margin-left: 3em;
+  font-weight: 1000;
+}
+#pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.pokeCard {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  color:white;
+  background-color: rgb(23, 11, 138);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.page-item {
+  margin-left: 5px;
+  padding: 5px;
+display: inline-block;
+
+
+
+
+}
+
+.page-link {
+  color: #333;
+  color:white;
+  background-color: rgb(23, 11, 138);
+  border: 2px solid #dee2e6;
+  text-decoration: none;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-item.active .page-link {
+  color: #fff;
+  background-color: #2bddf5;
+  border-color: #007bff;
+}
