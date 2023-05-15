@@ -127,14 +127,16 @@ const setup = async () => {
         <ul>
         ${res.data.stats.map((stat) => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
         </ul>
+
         </div>
+
         </div>
           <h3>Types</h3>
           <ul>
           ${types.map((type) => `<li>${type}</li>`).join('')}
           </ul>
+      
         `)
-    
     $('.modal-title').html(`
         <h2>${res.data.name.toUpperCase()}</h2>
         <h5>${res.data.id}</h5>
@@ -149,18 +151,19 @@ const setup = async () => {
 
     await filterPokemons(selectedTypes);
   });
-    $('.typeCheckbox:checked').each(function () {
-      selectedTypes.push($(this).val());
-    });
-    await filterPokemons(selectedTypes);
-  });
+
   $('body').on('click', ".numberedButtons, .previousButton, .nextButton", async function (e) {
     currentPage = Number(e.target.value);
     const selectedTypes = [];
+    $('.typeCheckbox:checked').each(function () {
+      selectedTypes.push($(this).val());
+    });
+
+    await filterPokemons(selectedTypes);
+  });
 
   const numPages = Math.ceil(pokemons.length / PAGE_SIZE);
   paginate(currentPage, PAGE_SIZE, pokemons);
   updatePaginationDiv(currentPage, numPages);
 };
-
 $(document).ready(setup);
