@@ -34,7 +34,7 @@ const updatePaginationDiv = (currentPage, numPages) => {
 };
 
 const updateDisplayInfo = (total, displayed) => {
-  $('#displayInfo').text(`Total Pokémon: ${total} | Displayed Pokémon: ${displayed}`);
+  $('#displayInfo').text(`Total # Pokemon: ${total} | Currently Displayed: ${displayed}`);
 };
 
 const paginate = async (currentPage, PAGE_SIZE, pokemons) => {
@@ -166,4 +166,5 @@ const setup = async () => {
   paginate(currentPage, PAGE_SIZE, pokemons);
   updatePaginationDiv(currentPage, numPages);
 };
+
 $(document).ready(setup);
