@@ -122,7 +122,6 @@ const setup = async () => {
         ${res.data.abilities.map((ability) => `<li>${ability.ability.name}</li>`).join('')}
         </ul>
         </div>
-
         <div>
         <h3>Stats</h3>
         <ul>
